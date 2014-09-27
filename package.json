@@ -1,0 +1,67 @@
+{
+  "name": "cli-compiler",
+  "version": "0.0.1",
+  "description": "Compiler for the command module",
+  "author": "muji <noop@xpm.io>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freeformsystems/cli-compiler"
+  },
+  "bugs": {
+    "url": "https://github.com/freeformsystems/cli-compiler/issues",
+    "email": "muji <noop@xpm.io>"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/freeformsystems/cli-compiler/blob/master/LICENSE"
+    }
+  ],
+  "keywords": [
+    "cli",
+    "program",
+    "command",
+    "compiler",
+    "markdown"
+  ],
+  "dependencies": {
+    "cli-define": "^0.5.44",
+    "cli-env": "^1.0.9",
+    "cli-util": "^1.1.24",
+    "markzero": "^0.1.29"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "istanbul": "^0.3.2",
+    "mocha": "^1.21.4"
+  },
+  "engine": [
+    "node >= 0.10.21"
+  ],
+  "scripts": {
+    "readme": "mdp --force -v",
+    "test": "istanbul cover _mocha -- -u bdd --recursive --bail --reporter list -A test/spec"
+  },
+  "mdp": {
+    "title": "Compiler",
+    "pedantic": true,
+    "include": "doc/readme",
+    "require": "lib",
+    "links": "links.md",
+    "toc": "Table of Contents",
+    "base": "https://github.com/freeformsystems/cli-compiler",
+    "partial": [
+      {
+        "inc": [
+          "introduction.md",
+          "install.md"
+        ]
+      },
+      {
+        "inc": [
+          "license.md"
+        ]
+      }
+    ]
+  }
+}
