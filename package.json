@@ -1,7 +1,7 @@
 {
   "name": "cli-compiler",
   "version": "0.0.1",
-  "description": "Compiler for the command module",
+  "description": "Compiler for command line interfaces",
   "author": "muji <noop@xpm.io>",
   "repository": {
     "type": "git",
