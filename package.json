@@ -54,7 +54,8 @@
       {
         "inc": [
           "introduction.md",
-          "install.md"
+          "install.md",
+          "test.md"
         ]
       },
       {

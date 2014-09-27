@@ -3,6 +3,7 @@ Table of Contents
 
 * [Compiler](#compiler)
   * [Install](#install)
+  * [Test](#test)
   * [License](#license)
 
 Compiler
@@ -14,6 +15,12 @@ Compiler for the [command](https://github.com/freeformsystems/cli-command) modul
 
 ```
 npm i cli-compiler
+```
+
+## Test
+
+```
+npm test
 ```
 
 ## License
