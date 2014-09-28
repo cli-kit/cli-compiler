@@ -16,6 +16,8 @@ describe('cli-compiler:', function() {
       expect(req.program).to.be.an('object');
       expect(req.program.options()).to.be.an('object');
       expect(req.program.commands()).to.be.an('object');
+
+      // basic test on the compiled program (in-memory)
       var options = req.program.options();
       var output = options.mockOption;
       expect(output).to.be.an('object');
@@ -23,11 +25,13 @@ describe('cli-compiler:', function() {
       expect(output.names()).to.eql(['-o', '--mock-option']);
 
       // run an empty program against the compiled
-      // closure
+      // closure loaded from disc
       mock.run(opts, function(err, prg) {
+
         expect(err).to.eql(null);
         expect(prg).to.be.an('object');
         expect(prg).to.be.an.instanceof(Program);
+
         var opts = prg.options()
           , cmds = prg.commands();
 

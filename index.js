@@ -1,1 +1,2 @@
-module.exports = require('./lib');
+module.exports = require('./lib/deprecated');
+module.exports.compiler = require('./lib');
