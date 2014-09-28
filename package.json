@@ -25,8 +25,10 @@
     "markdown"
   ],
   "dependencies": {
-    "cli-define": "^0.5.44",
+    "cli-define": "^0.5.45",
     "cli-env": "^1.0.9",
+    "cli-error": "^0.5.7",
+    "cli-middleware": "0.0.3",
     "cli-util": "^1.1.24",
     "markzero": "^0.1.29"
   },
@@ -55,7 +57,8 @@
         "inc": [
           "introduction.md",
           "install.md",
-          "test.md"
+          "test.md",
+          "usage.md"
         ]
       },
       {
