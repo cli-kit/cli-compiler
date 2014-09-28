@@ -27,11 +27,10 @@
   "dependencies": {
     "async": "^0.9.0",
     "circular": "^1.0.5",
-    "cli-define": "^0.5.54",
+    "cli-define": "^0.6.0",
     "cli-env": "^1.0.9",
     "cli-error": "^0.5.7",
-    "cli-interface": "^1.0.11",
-    "cli-middleware": "0.0.3",
+    "cli-middleware": "^0.0.3",
     "cli-util": "^1.1.24",
     "escodegen": "^1.4.1",
     "esprima": "^1.2.2",
