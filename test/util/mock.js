@@ -9,6 +9,11 @@ var mock = {
         path.join(fixtures, 'empty.md'),
         path.join(fixtures, 'empty'),
       ]
+    },
+    single: {
+      input: [
+        path.join(fixtures, 'single-option.md'),
+      ]
     }
   }
 }
