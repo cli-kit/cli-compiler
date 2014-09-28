@@ -31,6 +31,17 @@ describe('cli-compiler:', function() {
         expect(err).to.eql(null);
         expect(prg).to.be.an('object');
         expect(prg).to.be.an.instanceof(Program);
+        expect(prg.name()).to.eql('simple-mock-program');
+        expect(prg.version()).to.eql('1.0.0');
+        var des = prg.description();
+        expect(des).to.be.an('object');
+        expect(des.txt).to.eql('Simple program.');
+        expect(des.md).to.eql('*Simple* program.');
+
+        var det = prg.detail();
+        expect(det).to.be.an('object');
+        expect(det.txt).to.eql('Mock detail about the program.');
+        expect(det.md).to.eql('Mock `detail` about the program.');
 
         var opts = prg.options()
           , cmds = prg.commands();

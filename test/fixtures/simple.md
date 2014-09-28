@@ -3,6 +3,8 @@ $0
 
 *Simple* program.
 
+Mock `detail` about the program.
+
 ## Commands
 
 * `mock-command, mc`: Mock command.

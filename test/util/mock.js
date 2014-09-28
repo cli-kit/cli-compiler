@@ -23,7 +23,7 @@ var mock = {
         configure: path.join(fixtures, 'simple-configure.js'),
       },
       output: path.join(target, 'simple-compiled.js'),
-      //print: true
+      print: true
     }
   }
 }
