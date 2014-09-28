@@ -11,12 +11,23 @@ describe('cli-compiler:', function() {
       expect(req.program).to.be.an('object');
       expect(req.program.options()).to.be.an('object');
       expect(req.program.commands()).to.be.an('object');
-      var opts = req.program.options();
-      var output = opts.output;
+      var options = req.program.options();
+      var output = options.output;
       expect(output).to.be.an('object');
       expect(output.key()).to.eql('output');
       expect(output.names()).to.eql(['-o', '--output']);
-      done();
+
+      // run an empty program against the compiled
+      // closure
+      mock.run(opts, function(err, prg) {
+        expect(err).to.eql(null);
+        expect(prg).to.be.an('object');
+        //console.dir(prg._options.output.name());
+        //console.dir(prg._options.output.key());
+        console.dir(Object.keys(prg.options()));
+        console.dir(Object.keys(prg.commands()));
+        done();
+      });
     });
   });
 })
