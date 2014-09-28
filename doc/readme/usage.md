@@ -9,3 +9,4 @@ The compiler executes the following phases:
 5. Parse markdown document to tokens (parse).
 6. Render markdown tokens into program definition (render).
 7. Replace variables in the program strings (replace).
+8. Transform the program definition to a module (transform).
