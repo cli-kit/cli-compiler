@@ -5,7 +5,7 @@ var mock = require('../util/mock');
 describe('cli-compiler:', function() {
 
   it('should compile single option program', function(done) {
-    var opts = mock.opts.single;
+    var opts = mock.opts.simple;
     compiler(opts, function(err, req) {
       expect(req).to.be.an('object');
       expect(req.program).to.be.an('object');

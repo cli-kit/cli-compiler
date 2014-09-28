@@ -11,15 +11,15 @@ var mock = {
         path.join(fixtures, 'empty'),
       ]
     },
-    single: {
+    simple: {
       input: [
-        path.join(fixtures, 'single-option.md'),
+        path.join(fixtures, 'simple.md'),
       ],
-      pkg: path.join(fixtures, 'single-option-pkg.json'),
+      pkg: path.join(fixtures, 'simple-pkg.json'),
       sources: {
-        configure: path.join(fixtures, 'single-option-configure.js'),
+        configure: path.join(fixtures, 'simple-configure.js'),
       },
-      output: path.join(target, 'single-option-compiled.js'),
+      output: path.join(target, 'simple-compiled.js'),
       print: true
     }
   }
