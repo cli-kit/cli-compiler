@@ -13,7 +13,7 @@ describe('cli-compiler:', function() {
   });
 
   it('should compile empty program', function(done) {
-    var opts = mock.opts.vanilla;
+    var opts = mock.opts.empty;
     compiler(opts, function(err, req) {
       expect(req).to.be.an('object');
       expect(req.program).to.be.an('object');

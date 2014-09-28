@@ -4,10 +4,10 @@ var path = require('path')
 
 var mock = {
   opts: {
-    vanilla: {
+    empty: {
       input: [
-        path.join(fixtures, 'vanilla.md'),
-        path.join(fixtures, 'vanilla'),
+        path.join(fixtures, 'empty.md'),
+        path.join(fixtures, 'empty'),
       ]
     }
   }
