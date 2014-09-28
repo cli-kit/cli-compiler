@@ -1,6 +1,7 @@
 var path = require('path')
   , define = require('cli-define')
   , Program = define.Program
+  , load = require('../..').load
   , base = path.normalize(path.join(__dirname, '..', '..'))
   , fixtures = path.join(base, 'test', 'fixtures')
   , target = path.join(base, 'target');
@@ -29,11 +30,8 @@ var mock = {
 }
 
 function run(opts, cb) {
-  var closure = require(opts.output);
   var prg = new Program('mock');
-  closure(prg, function(err, prg) {
-    cb(err, prg);
-  });
+  load(prg, opts, cb);
 }
 
 mock.run = run;
