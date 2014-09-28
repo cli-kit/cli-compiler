@@ -13,7 +13,8 @@ var mock = {
     single: {
       input: [
         path.join(fixtures, 'single-option.md'),
-      ]
+      ],
+      pkg: path.join(fixtures, 'single-option-pkg.json'),
     }
   }
 }

@@ -26,6 +26,7 @@
   ],
   "dependencies": {
     "async": "^0.9.0",
+    "circular": "^1.0.5",
     "cli-define": "^0.5.45",
     "cli-env": "^1.0.9",
     "cli-error": "^0.5.7",
