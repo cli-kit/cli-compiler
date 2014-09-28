@@ -18,6 +18,12 @@ function sections(secs) {
     .to.be.an('object');
 }
 
+function subcommand(sub) {
+  expect(sub).to.be.instanceof(Command);
+  expect(sub.name()).to.eql('mock-sub-command, msc');
+  expect(sub.key()).to.eql('mockSubCommand');
+}
+
 describe('cli-compiler:', function() {
 
   it('should compile simple program', function(done) {
@@ -34,14 +40,17 @@ describe('cli-compiler:', function() {
       expect(program.commands()).to.be.an('object');
 
       // basic test on the compiled program (in-memory)
-      var options = program.options();
-      var mockOption = options.mockOption;
+      var mockOption = program.options().mockOption;
       expect(mockOption).to.be.an('object');
       expect(mockOption.key()).to.eql('mockOption');
       expect(mockOption.names()).to.eql(['-o', '--mock-option']);
 
       converter(mockOption.converter());
       sections(program.sections());
+
+      var mockCommand = program.commands().mockCommand;
+      var mockSubCommand = mockCommand.commands().mockSubCommand;
+      subcommand(mockSubCommand);
 
       // run an empty program against the compiled
       // closure loaded from disc
