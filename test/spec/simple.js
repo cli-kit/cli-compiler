@@ -24,21 +24,24 @@ describe('cli-compiler:', function() {
     var opts = mock.opts.simple;
     compiler(opts, function(err, req) {
       //console.dir(err);
+      expect(err).to.eql(undefined);
       expect(req).to.be.an('object');
-      expect(req.program).to.be.an('object');
-      expect(req.program.options()).to.be.an('object');
-      expect(req.program.commands()).to.be.an('object');
+
+      var program = req.program;
+
+      expect(program).to.be.an('object');
+      expect(program.options()).to.be.an('object');
+      expect(program.commands()).to.be.an('object');
 
       // basic test on the compiled program (in-memory)
-      var options = req.program.options();
+      var options = program.options();
       var mockOption = options.mockOption;
       expect(mockOption).to.be.an('object');
       expect(mockOption.key()).to.eql('mockOption');
       expect(mockOption.names()).to.eql(['-o', '--mock-option']);
 
       converter(mockOption.converter());
-
-      sections(req.program.sections());
+      sections(program.sections());
 
       // run an empty program against the compiled
       // closure loaded from disc
@@ -59,6 +62,9 @@ describe('cli-compiler:', function() {
         expect(det).to.be.an('object');
         expect(det.txt).to.eql('Mock detail about the program.');
         expect(det.md).to.eql('Mock `detail` about the program.');
+
+        // loaded sections information
+        sections(prg.sections());
 
         var opts = prg.options()
           , cmds = prg.commands();
