@@ -5,9 +5,9 @@ $0
 
 ## Commands
 
-* `mock-command: mock-cmd, mc`: Mock command.
+* `mock-command, mc`: Mock command.
 
 ## Options
 
-* `-o, --output <file>`: Output file.
-* `-f, --flag`: Flag option.
+* `-o, --mock-option <file>`: Mock option argument.
+* `-f, --mock-flag`: Mock flag argument.
