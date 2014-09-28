@@ -5,7 +5,12 @@ var expect = require('chai').expect
   , Option = define.Option
   , Flag = define.Flag
   , compiler = require('../..').compiler
-  , mock = require('../util/mock')
+  , mock = require('../util/mock');
+
+function converter(func) {
+  expect(func).to.be.a('function');
+  expect(func.name).to.eql('mockOptionConverter');
+}
 
 describe('cli-compiler:', function() {
 
@@ -19,10 +24,12 @@ describe('cli-compiler:', function() {
 
       // basic test on the compiled program (in-memory)
       var options = req.program.options();
-      var output = options.mockOption;
-      expect(output).to.be.an('object');
-      expect(output.key()).to.eql('mockOption');
-      expect(output.names()).to.eql(['-o', '--mock-option']);
+      var mockOption = options.mockOption;
+      expect(mockOption).to.be.an('object');
+      expect(mockOption.key()).to.eql('mockOption');
+      expect(mockOption.names()).to.eql(['-o', '--mock-option']);
+
+      converter(mockOption.converter());
 
       // run an empty program against the compiled
       // closure loaded from disc
@@ -33,6 +40,7 @@ describe('cli-compiler:', function() {
         expect(prg).to.be.an.instanceof(Program);
         expect(prg.name()).to.eql('simple-mock-program');
         expect(prg.version()).to.eql('1.0.0');
+
         var des = prg.description();
         expect(des).to.be.an('object');
         expect(des.txt).to.eql('Simple program.');
@@ -55,6 +63,8 @@ describe('cli-compiler:', function() {
         expect(cmds.mockCommand).to.be.instanceof(Command);
         expect(opts.mockOption).to.be.instanceof(Option);
         expect(opts.mockFlag).to.be.instanceof(Flag);
+
+        converter(opts.mockOption.converter());
 
         done();
       });

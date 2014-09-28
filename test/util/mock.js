@@ -11,7 +11,6 @@ var mock = {
     empty: {
       input: [
         path.join(fixtures, 'empty.md'),
-        path.join(fixtures, 'empty'),
       ],
       print: false
     },
@@ -22,6 +21,8 @@ var mock = {
       pkg: path.join(fixtures, 'simple-pkg.json'),
       sources: {
         configure: path.join(fixtures, 'simple-configure.js'),
+        commands: path.join(fixtures, 'simple', 'commands.js'),
+        options: path.join(fixtures, 'simple', 'options.js'),
       },
       output: path.join(target, 'simple-compiled.js'),
       print: true
