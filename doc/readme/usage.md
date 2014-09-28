@@ -1,4 +1,4 @@
-## Usage 
+## Usage
 
 The compiler executes the following phases:
 
@@ -10,3 +10,5 @@ The compiler executes the following phases:
 6. Render markdown tokens into program definition (render).
 7. Replace variables in the program strings (replace).
 8. Transform the program definition to a module (transform).
+9. Write the transformed javascript module to a file (write).
+10. Print the javascript document (print).
