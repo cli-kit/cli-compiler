@@ -15,6 +15,9 @@ var mock = {
         path.join(fixtures, 'single-option.md'),
       ],
       pkg: path.join(fixtures, 'single-option-pkg.json'),
+      sources: {
+        configure: path.join(fixtures, 'single-option-configure.js'),
+      }
     }
   }
 }
