@@ -1,4 +1,4 @@
 $0
 ==
 
-Vanilla program.
+*Empty* program.

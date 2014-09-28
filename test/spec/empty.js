@@ -3,7 +3,6 @@ var compiler = require('../..').compiler;
 var mock = require('../util/mock');
 
 describe('cli-compiler:', function() {
-
   it('should error with no input files', function(done) {
     var opts = {};
     compiler(opts, function(err, req) {
@@ -21,7 +20,10 @@ describe('cli-compiler:', function() {
       expect(req.program.commands()).to.be.an('object');
       expect(Object.keys(req.program.options())).to.eql([]);
       expect(Object.keys(req.program.commands())).to.eql([]);
-      //console.dir(req.program.name());
+      expect(req.program.name()).to.eql('program');
+      expect(req.program.version()).to.eql('0.0.1');
+      expect(req.program.description().txt).to.eql('Empty program.');
+      expect(req.program.description().md).to.eql('*Empty* program.');
       done();
     });
   });
