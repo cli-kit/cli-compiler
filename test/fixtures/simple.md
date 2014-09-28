@@ -13,3 +13,7 @@ Mock `detail` about the program.
 
 * `-o, --mock-option <file>`: Mock option argument.
 * `-f, --mock-flag`: Mock flag argument.
+
+## Mock Top-Level Section
+
+Mock top-level section text.

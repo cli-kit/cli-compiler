@@ -25,7 +25,7 @@ var mock = {
         options: path.join(fixtures, 'simple', 'options.js'),
       },
       output: path.join(target, 'simple-compiled.js'),
-      print: true
+      //print: true
     }
   }
 }

@@ -46,6 +46,7 @@
   ],
   "scripts": {
     "readme": "mdp --force -v",
+    "pretest": "rm -rfv ./target && mkdir -p ./target",
     "test": "istanbul cover _mocha -- -u bdd --recursive --bail --reporter list -A test/spec"
   },
   "mdp": {

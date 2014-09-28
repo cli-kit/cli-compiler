@@ -12,11 +12,18 @@ function converter(func) {
   expect(func.name).to.eql('mockOptionConverter');
 }
 
+function sections(secs) {
+  expect(secs).to.be.an('object');
+  expect(secs['mock top-level section'])
+    .to.be.an('object');
+}
+
 describe('cli-compiler:', function() {
 
   it('should compile simple program', function(done) {
     var opts = mock.opts.simple;
     compiler(opts, function(err, req) {
+      //console.dir(err);
       expect(req).to.be.an('object');
       expect(req.program).to.be.an('object');
       expect(req.program.options()).to.be.an('object');
@@ -30,6 +37,8 @@ describe('cli-compiler:', function() {
       expect(mockOption.names()).to.eql(['-o', '--mock-option']);
 
       converter(mockOption.converter());
+
+      sections(req.program.sections());
 
       // run an empty program against the compiled
       // closure loaded from disc
