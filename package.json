@@ -29,6 +29,7 @@
     "cli-define": "^0.5.45",
     "cli-env": "^1.0.9",
     "cli-error": "^0.5.7",
+    "cli-interface": "^1.0.11",
     "cli-middleware": "0.0.3",
     "cli-util": "^1.1.24",
     "markzero": "^0.1.29"
