@@ -1,6 +1,7 @@
 var path = require('path')
   , base = path.normalize(path.join(__dirname, '..', '..'))
-  , fixtures = path.join(base, 'test', 'fixtures');
+  , fixtures = path.join(base, 'test', 'fixtures')
+  , target = path.join(base, 'target');
 
 var mock = {
   opts: {
@@ -17,7 +18,9 @@ var mock = {
       pkg: path.join(fixtures, 'single-option-pkg.json'),
       sources: {
         configure: path.join(fixtures, 'single-option-configure.js'),
-      }
+      },
+      output: path.join(target, 'single-option-compiled.js'),
+      print: true
     }
   }
 }
