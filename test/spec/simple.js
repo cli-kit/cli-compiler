@@ -72,9 +72,6 @@ describe('cli-compiler:', function() {
         expect(det.txt).to.eql('Mock detail about the program.');
         expect(det.md).to.eql('Mock `detail` about the program.');
 
-        // loaded sections information
-        sections(prg.sections());
-
         var opts = prg.options()
           , cmds = prg.commands();
 
@@ -89,6 +86,12 @@ describe('cli-compiler:', function() {
         expect(opts.mockFlag).to.be.instanceof(Flag);
 
         converter(opts.mockOption.converter());
+        // loaded sections information
+        sections(prg.sections());
+
+        var mockCommand = prg.commands().mockCommand;
+        var mockSubCommand = mockCommand.commands().mockSubCommand;
+        //subcommand(mockCommand.commands());
 
         done();
       });
