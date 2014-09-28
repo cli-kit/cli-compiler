@@ -12,13 +12,16 @@ describe('cli-compiler:', function() {
     });
   });
 
-  it('should compile program', function(done) {
+  it('should compile empty program', function(done) {
     var opts = mock.opts.vanilla;
     compiler(opts, function(err, req) {
-      //console.dir('complete');
-      //console.dir(arguments);
       expect(req).to.be.an('object');
       expect(req.program).to.be.an('object');
+      expect(req.program.options()).to.be.an('object');
+      expect(req.program.commands()).to.be.an('object');
+      expect(Object.keys(req.program.options())).to.eql([]);
+      expect(Object.keys(req.program.commands())).to.eql([]);
+      //console.dir(req.program.name());
       done();
     });
   });
