@@ -36,6 +36,8 @@ Mock command `detail` text.
 
 This is some help information for the mock command manual.
 
+With an extra paragraph.
+
 <!-- custom top-level help sections -->
 
 ## Mock Top-Level Section
