@@ -4,7 +4,7 @@ var expect = require('chai').expect
   , Command = define.Command
   , Option = define.Option
   , Flag = define.Flag
-  , compiler = require('../..').compiler
+  , compiler = require('../..')
   , mock = require('../util/mock');
 
 function converter(func) {

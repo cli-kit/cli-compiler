@@ -1,5 +1,5 @@
 var expect = require('chai').expect;
-var compiler = require('../..').compiler;
+var compiler = require('../..');
 var mock = require('../util/mock');
 
 describe('cli-compiler:', function() {
