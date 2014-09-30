@@ -40,7 +40,7 @@ var mock = {
         commands: require('../fixtures/def/commands')
       },
       output: path.join(target, 'definition-compiled.js'),
-      print: true
+      print: false
     },
     simple: {
       input: [
