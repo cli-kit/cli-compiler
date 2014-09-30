@@ -7,19 +7,28 @@ var expect = require('chai').expect
   , compiler = require('../..')
   , mock = require('../util/mock');
 
-describe('cli-compiler:', function() {
-  var source = new Program('mock-program');
+function assert(prg) {
 
-  it('should re-use existing program', function(done) {
-    var opts = mock.opts.simple;
-    opts.program = source;
+  // top-level option
+  var opt = prg.options().mockOption;
+  expect(opt.converter()).to.be.a('function');
+
+  // nested command level option
+  opt = prg.commands().mockCommand
+    .options().mockCommandOption;
+  expect(opt.converter()).to.be.a('function');
+}
+
+describe('cli-compiler:', function() {
+
+  it('should deep merge converters', function(done) {
+    var opts = mock.opts.merge;
     compiler(opts, function(err, req) {
       expect(err).to.eql(undefined);
       expect(req).to.be.an('object');
       expect(req.program).to.be.an('object');
 
-      expect(req.program).to.eql(source);
-      req.program.options().mockOption.value('mock-value');
+      assert(req.program);
 
       // run an empty program against the compiled
       // closure loaded from disc
@@ -27,10 +36,8 @@ describe('cli-compiler:', function() {
         expect(err).to.eql(null);
         expect(prg).to.be.an('object');
 
-        expect(prg).to.eql(source);
-        expect(prg.options().mockOption.value()).to.eql(undefined);
+        assert(prg);
 
-        delete opts.program;
         done();
       });
     });

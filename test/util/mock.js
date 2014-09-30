@@ -42,6 +42,14 @@ var mock = {
       output: path.join(target, 'definition-compiled.js'),
       print: false
     },
+    merge: {
+      input: [
+        path.join(fixtures, 'complex-merge.md'),
+      ],
+      definition: require('../fixtures/def/complex'),
+      output: path.join(target, 'complex-merge-compiled.js'),
+      print: false
+    },
     simple: {
       input: [
         path.join(fixtures, 'simple.md'),
