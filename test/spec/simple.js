@@ -14,7 +14,7 @@ function converter(func) {
 
 function sections(secs) {
   expect(secs).to.be.an('object');
-  expect(secs['mock top-level section'])
+  expect(secs['mock-top-level-section'])
     .to.be.an('object');
 }
 

@@ -29,7 +29,7 @@ var mock = {
         path.join(fixtures, 'replace.md'),
       ],
       output: path.join(target, 'replace-compiled.js'),
-      print: true
+      print: false
     },
     simple: {
       input: [
