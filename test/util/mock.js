@@ -24,6 +24,13 @@ var mock = {
       output: path.join(target, 'basic-compiled.js'),
       print: false
     },
+    replace: {
+      input: [
+        path.join(fixtures, 'replace.md'),
+      ],
+      output: path.join(target, 'replace-compiled.js'),
+      print: true
+    },
     simple: {
       input: [
         path.join(fixtures, 'simple.md'),
