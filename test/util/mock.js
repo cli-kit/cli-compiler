@@ -22,7 +22,7 @@ var mock = {
         path.join(fixtures, 'basic.md'),
       ],
       output: path.join(target, 'basic-compiled.js'),
-      print: true
+      print: false
     },
     simple: {
       input: [
@@ -35,7 +35,7 @@ var mock = {
         options: path.join(fixtures, 'simple', 'options.js'),
       },
       output: path.join(target, 'simple-compiled.js'),
-      print: true
+      print: false
     }
   }
 }
