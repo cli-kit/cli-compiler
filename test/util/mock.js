@@ -14,6 +14,16 @@ var mock = {
       ],
       print: false
     },
+    basic: {
+      name: 'basic-program',
+      version: '1.0.0',
+      description: 'A *basic* program description',
+      input: [
+        path.join(fixtures, 'basic.md'),
+      ],
+      output: path.join(target, 'basic-compiled.js'),
+      print: true
+    },
     simple: {
       input: [
         path.join(fixtures, 'simple.md'),
