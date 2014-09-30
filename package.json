@@ -30,6 +30,7 @@
     "cli-define": "^0.6.4",
     "cli-env": "^1.0.9",
     "cli-error": "^0.5.7",
+    "cli-flag-util": "^1.0.0",
     "cli-middleware": "^0.0.3",
     "cli-util": "^1.1.24",
     "escodegen": "^1.4.1",
