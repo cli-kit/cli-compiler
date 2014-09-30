@@ -31,6 +31,17 @@ var mock = {
       output: path.join(target, 'replace-compiled.js'),
       print: false
     },
+    definition: {
+      input: [
+        path.join(fixtures, 'definition.md'),
+      ],
+      definition: {
+        options: require('../fixtures/def/options'),
+        commands: require('../fixtures/def/commands')
+      },
+      output: path.join(target, 'definition-compiled.js'),
+      print: true
+    },
     simple: {
       input: [
         path.join(fixtures, 'simple.md'),
@@ -38,8 +49,8 @@ var mock = {
       pkg: path.join(fixtures, 'simple-pkg.json'),
       sources: {
         configure: path.join(fixtures, 'simple-configure.js'),
-        commands: path.join(fixtures, 'simple', 'commands.js'),
-        options: path.join(fixtures, 'simple', 'options.js'),
+        commands: path.join(fixtures, 'def', 'commands.js'),
+        options: path.join(fixtures, 'def', 'options.js'),
       },
       output: path.join(target, 'simple-compiled.js'),
       print: false
