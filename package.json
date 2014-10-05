@@ -32,7 +32,7 @@
     "cli-env": "^1.0.9",
     "cli-error": "^0.5.7",
     "cli-flag-util": "^1.0.0",
-    "cli-middleware": "0.0.3",
+    "cli-middleware": "~1.0.0",
     "cli-util": "^1.1.26",
     "escodegen": "^1.4.1",
     "esprima": "^1.2.2",
