@@ -62,6 +62,19 @@ var mock = {
       },
       output: path.join(target, 'simple-compiled.js'),
       print: false
+    },
+    complex: {
+      input: [
+        path.join(fixtures, 'complex.md'),
+      ],
+      pkg: path.join(fixtures, 'complex-pkg.json'),
+      sources: {
+        //configure: path.join(fixtures, 'simple-configure.js'),
+        //commands: path.join(fixtures, 'def', 'commands.js'),
+        //options: path.join(fixtures, 'def', 'options.js'),
+      },
+      output: path.join(target, 'complex-compiled.js'),
+      print: false
     }
   }
 }
