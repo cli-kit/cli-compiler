@@ -3,18 +3,19 @@
   "version": "0.1.35",
   "description": "Compiler for command line interfaces",
   "author": "muji <noop@xpm.io>",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/freeformsystems/cli-compiler"
+    "url": "https://github.com/cli-kit/cli-compiler"
   },
   "bugs": {
-    "url": "https://github.com/freeformsystems/cli-compiler/issues",
+    "url": "https://github.com/cli-kit/cli-compiler/issues",
     "email": "muji <noop@xpm.io>"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/freeformsystems/cli-compiler/blob/master/LICENSE"
+      "url": "https://github.com/cli-kit/cli-compiler/blob/master/LICENSE"
     }
   ],
   "keywords": [
@@ -25,34 +26,35 @@
     "markdown"
   ],
   "dependencies": {
-    "async": "~0.9.2",
+    "async": "~1.5.2",
     "circular": "^1.0.5",
     "cli-converter-util": "^1.0.1",
     "cli-define": "^0.6.13",
     "cli-env": "^1.0.9",
     "cli-error": "^0.5.7",
     "cli-flag-util": "^1.0.0",
-    "cli-middleware": "~1.0.0",
+    "cli-middleware": "~2.0.1",
     "cli-util": "^1.1.26",
     "escodegen": "~1.6.1",
     "esprima": "~2.4.1",
-    "markzero": "^0.1.29"
+    "markzero": "~0.1.31"
   },
   "devDependencies": {
-    "chai": "^1.9.1",
+    "chai": "~3.5.0",
     "cli-converter-util": "^1.0.1",
-    "cli-types": "~0.1.1",
-    "istanbul": "^0.3.2",
-    "mocha": "^1.21.4"
+    "cli-types": "~0.1.2",
+    "istanbul": "~0.4.2",
+    "mocha": "~2.4.5"
   },
   "engine": [
     "node >= 0.10.21"
   ],
   "scripts": {
+    "lint": "jshint . && jscs .",
     "readme": "mdp --force -v",
     "pretest": "rm -rfv ./target && mkdir -p ./target",
-    "test": "NODE_ENV=test mocha test/spec",
-    "cover": "NODE_ENV=test istanbul cover _mocha -- test/spec"
+    "test": "NODE_ENV=test mocha ${SPEC:-test/spec}",
+    "cover": "NODE_ENV=test istanbul cover _mocha -- ${SPEC:-test/spec}"
   },
   "mdp": {
     "title": "Compiler",
@@ -61,7 +63,7 @@
     "require": "lib",
     "links": "links.md",
     "toc": "Table of Contents",
-    "base": "https://github.com/freeformsystems/cli-compiler",
+    "base": "https://github.com/cli-kit/cli-compiler",
     "partial": [
       {
         "inc": [

@@ -1,9 +1,6 @@
 var expect = require('chai').expect
   , define = require('cli-define')
   , Program = define.Program
-  , Command = define.Command
-  , Option = define.Option
-  , Flag = define.Flag
   , compiler = require('../..')
   , mock = require('../util/mock');
 

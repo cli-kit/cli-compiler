@@ -5,14 +5,9 @@ module.exports = {
   commands: {
     mockCommand: {
       options: {
-        mockCommandOption: types.integer,
+        mockCommandOption: types.integer
       }
-    },
-    //uuids: {
-      //options: {
-        //count: types.integer
-      //}
-    //}
+    }
   },
   options: {
     mockOption: types.file('-f'),
@@ -20,6 +15,6 @@ module.exports = {
       default: types.resource('-f', true, ['json', 'js']),
       att: types.resource('-f', true),
       app: types.resource('-f', true)
-    }),
+    })
   }
 }

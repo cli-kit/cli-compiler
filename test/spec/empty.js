@@ -5,7 +5,7 @@ var mock = require('../util/mock');
 describe('cli-compiler:', function() {
   it('should error with no input files', function(done) {
     var opts = {};
-    compiler(opts, function(err, req) {
+    compiler(opts, function(err/*, req*/) {
       expect(err).to.be.instanceof(Error);
       done();
     });

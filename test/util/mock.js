@@ -10,7 +10,7 @@ var mock = {
   opts: {
     empty: {
       input: [
-        path.join(fixtures, 'empty.md'),
+        path.join(fixtures, 'empty.md')
       ],
       print: false
     },
@@ -19,21 +19,21 @@ var mock = {
       version: '1.0.0',
       description: 'A *basic* program description',
       input: [
-        path.join(fixtures, 'basic.md'),
+        path.join(fixtures, 'basic.md')
       ],
       output: path.join(target, 'basic-compiled.js'),
       print: false
     },
     replace: {
       input: [
-        path.join(fixtures, 'replace.md'),
+        path.join(fixtures, 'replace.md')
       ],
       output: path.join(target, 'replace-compiled.js'),
       print: false
     },
     definition: {
       input: [
-        path.join(fixtures, 'definition.md'),
+        path.join(fixtures, 'definition.md')
       ],
       definition: {
         options: require('../fixtures/def/options'),
@@ -44,7 +44,7 @@ var mock = {
     },
     merge: {
       input: [
-        path.join(fixtures, 'complex-merge.md'),
+        path.join(fixtures, 'complex-merge.md')
       ],
       definition: require('../fixtures/def/complex'),
       output: path.join(target, 'complex-merge-compiled.js'),
@@ -52,26 +52,26 @@ var mock = {
     },
     simple: {
       input: [
-        path.join(fixtures, 'simple.md'),
+        path.join(fixtures, 'simple.md')
       ],
       pkg: path.join(fixtures, 'simple-pkg.json'),
       sources: {
         configure: path.join(fixtures, 'simple-configure.js'),
         commands: path.join(fixtures, 'def', 'commands.js'),
-        options: path.join(fixtures, 'def', 'options.js'),
+        options: path.join(fixtures, 'def', 'options.js')
       },
       output: path.join(target, 'simple-compiled.js'),
       print: false
     },
     complex: {
       input: [
-        path.join(fixtures, 'complex.md'),
+        path.join(fixtures, 'complex.md')
       ],
       pkg: path.join(fixtures, 'complex-pkg.json'),
       sources: {
         //configure: path.join(fixtures, 'simple-configure.js'),
         //commands: path.join(fixtures, 'def', 'commands.js'),
-        //options: path.join(fixtures, 'def', 'options.js'),
+        //options: path.join(fixtures, 'def', 'options.js')
       },
       output: path.join(target, 'complex-compiled.js'),
       print: false
