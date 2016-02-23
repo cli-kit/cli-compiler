@@ -35,14 +35,15 @@
     "cli-flag-util": "^1.0.0",
     "cli-middleware": "~2.0.1",
     "cli-util": "^1.1.26",
-    "escodegen": "~1.6.1",
-    "esprima": "~2.4.1",
+    "escodegen": "~1.8.0",
+    "esprima": "~2.7.2",
     "markzero": "~0.1.31"
   },
   "devDependencies": {
     "chai": "~3.5.0",
     "cli-converter-util": "^1.0.1",
     "cli-types": "~0.1.2",
+    "coveralls": "~2.11.6",
     "istanbul": "~0.4.2",
     "mocha": "~2.4.5"
   },
@@ -54,7 +55,8 @@
     "readme": "mdp --force -v",
     "pretest": "rm -rfv ./target && mkdir -p ./target",
     "test": "NODE_ENV=test mocha ${SPEC:-test/spec}",
-    "cover": "NODE_ENV=test istanbul cover _mocha -- ${SPEC:-test/spec}"
+    "cover": "NODE_ENV=test istanbul cover _mocha -- ${SPEC:-test/spec}",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "mdp": {
     "title": "Compiler",

@@ -1,0 +1,22 @@
+language: node_js
+sudo: false
+branches:
+  except:
+    - develop
+script: npm run cover
+node_js:
+  - '4.1'
+  - '4.0'
+  - '0.12'
+  - stable
+after_success:
+  - npm run coveralls
+deploy:
+  provider: npm
+  email: freeformsystems@gmail.com
+  api_key:
+    secure: FB0o7eZxaC3ozeZG36pu6O183c9rM7axla0ZgPtsSAhBRU8Af97BjaQu992DjVIdpYOI2tjF6ql/Q+V5ujFrrwbx+m1fOYMaUHp/Bq+/+xZ0I9VYJbxPmUtqoipg614x8silsQUXVdjBsxsuw/a8lLjNwxlyiU29YCbICJikIL2bNHdSoYPxU2f8OcMidxy6sgbjWD22PgLs6lRml/LTO9FHQ3uGl2u2oR12pmRn1dKp8sd0uFi1YEtcsPLHy0o9NjMtYC8PqPtm7ZtGmtORMOEUFKFJ4cMKV6e+wG//yCdwpjqe6vBQ0E5dXIcFDoBZvlFz/V8jbMJOtxvYr06YSGq6B+YimugD1ieuPPEvXCanYgz91LmULG+kDr3F1Nx6YZnjhY9DSqCh0NmSDKhr/x0w+BiBajlBALyJQN5kFncpMMkaLjHb96pYe05r8qLSQBde9wY7WDAtr0WTVO/VWzg2Jc4NDUVA2iki5PLFwQOoCKLTidrNC84TgvcnsNvXN/fxKlkY4u/Mk6l++tcTCalZrm2m5r7rhOAQk9Jzd+xnfRZJ9o5/hAyRL8bMB4oq8CKOSIWJVjCXlov+PetXgFH9kDDLWEq9FgDMBNorDxd3u1emWQLsQURPF5n3bogGMLsbDRiQHW7LLD65EMtJu33mYYSZDl3+SXFr5l4UQLI=
+  on:
+    tags: true
+    repo: cli-kit/cli-compiler
+    node: '4.1'
